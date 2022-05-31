@@ -1,5 +1,16 @@
 <template>
-  <p class="bg-white">Test</p>
+  <h1 class="text-white font-space-age text-center text-5xl">404</h1>
+  <p class="text-white font-space-age font-light text-center">
+    Erreur 404 page non-trouvé
+  </p>
+  <h2 class="text-white font-inter italic text-center mt-7 ml-3 mr-3">
+    "T'es comme le C cédille de Surf, tu n'existes pas !"
+  </h2>
+  <p class="text-white flex font-inter text-sm flex-row-reverse mr-3 ml-3 mb-7">
+    Jean Dujardin, Brice de Nice (2005)
+  </p>
+
+  <img class="mr-auto ml-auto mb-10" src="../assets/page404.gif" />
 </template>
 <script >
 import card from "../components/card.vue";

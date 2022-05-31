@@ -17,7 +17,7 @@ const router = createRouter({
       component: Contact
     },
     {
-      path: '/page404',
+      path: '/:catchAll(.*)',
       name: 'page404',
       component: page404
     },
