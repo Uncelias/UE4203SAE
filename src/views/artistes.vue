@@ -8,7 +8,7 @@
   <h1 class="absolute text-white z-10 font-space-age text-2xl mt-8 ml-4">
     Martin Solveig
   </h1>
-  <img class="absolute ml-96" src="../assets/Degrad bulle.png" />
+  <img class="absolute ml-80" src="../assets/Degrad bulle.png" />
   <img
     class="
       shrink-0
@@ -31,7 +31,7 @@
   <h1 class="absolute text-white z-10 font-space-age text-2xl mt-7 ml-56">
     Deadmau5
   </h1>
-  <img class="absolute -ml-9" src="../assets/Degrad bulle.png" />
+  <img class="absolute ml-9" src="../assets/Degrad bulle.png" />
   <img
     class="
       shrink-0
@@ -57,7 +57,7 @@
   <h1 class="absolute text-white z-10 font-space-age text-2xl mt-20 ml-4">
     David Guetta
   </h1>
-  <img class="absolute ml-96" src="../assets/Degrad bulle.png" />
+  <img class="absolute ml-80" src="../assets/Degrad bulle.png" />
   <img
     class="
       shrink-0
@@ -74,7 +74,7 @@
     src="../assets/david.png"
   />
 
-  <img class="absolute -ml-5" src="../assets/Degrad bulle.png" />
+  <img class="absolute -ml-9" src="../assets/Degrad bulle.png" />
 
   <img
     class="

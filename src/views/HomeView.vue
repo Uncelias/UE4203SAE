@@ -2,6 +2,7 @@
   <p class="flex text-white font-space-age text-2xl -mt-14 ml-8">
     Join The Move
   </p>
+  <img class="absolute ml-80" src="../assets/Degrad bulle.png" />
   <p class="flex text-white font-inter ml-8 mr-8">
     Take part to the first edition of UTOPIA the new electro fest coming to
     london this summer !
@@ -12,6 +13,8 @@
   >
     Be Ready
   </p>
+  <img class="absolute -ml-5" src="../assets/Degrad bulle.png" />
+
   <p class="flex flex-row-reverse font-inter text-white ml-8 mr-8">
     From the 20th of august to the 22th come
   </p>
@@ -72,7 +75,7 @@
   <card2 />
   <card3 />
 
-  <!--SEARCH BAR ET SEARCH LOCATION RESPONSIVE!-->
+  <!--SEARCH BAR ET SEARCH LOCATION RESPONSIVE!
 
   <div class="pl-8 pt-4 pr-8 lg:flex-auto lg:max-w-sm">
     <searchBar />
@@ -86,7 +89,7 @@
     class="
       grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(500px,1fr))]
     "
-  ></div>
+  ></div>-->
 </template>
 
 <script >
