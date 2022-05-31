@@ -4,7 +4,13 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      "fontFamily": {
+        "space-age": "Space Age",
+        "inter": "Inter",
+        "work-sans": "Work Sans"
+      },
+    },
   },
   plugins: [],
 }
