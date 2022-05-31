@@ -5,6 +5,7 @@ import page404 from '../views/page404.vue'
 import Programmation from '../views/Programmation.vue'
 import mentionslegales from '../views/mentionslegales.vue'
 import thefestival from '../views/thefestival.vue'
+import artistes from '../views/artistes.vue'
 
 
 const router = createRouter({
@@ -39,6 +40,11 @@ const router = createRouter({
       path: '/thefestival',
       name: 'thefestival',
       component: thefestival
+    },
+    {
+      path: '/artistes',
+      name: 'artistes',
+      component: artistes
     },
     {
       path: '/about',
