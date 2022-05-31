@@ -6,7 +6,7 @@ import Programmation from '../views/Programmation.vue'
 import mentionslegales from '../views/mentionslegales.vue'
 import thefestival from '../views/thefestival.vue'
 import artistes from '../views/artistes.vue'
-
+import styleguide from '../views/styleguide.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -45,6 +45,11 @@ const router = createRouter({
       path: '/artistes',
       name: 'artistes',
       component: artistes
+    },
+    {
+      path: '/styleguide',
+      name: 'styleguide',
+      component: styleguide
     },
     {
       path: '/about',
