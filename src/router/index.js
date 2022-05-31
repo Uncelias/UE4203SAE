@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Contact from '../views/Contact.vue'
 import page404 from '../views/page404.vue'
+import Programmation from '../views/Programmation.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,11 @@ const router = createRouter({
       path: '/:catchAll(.*)',
       name: 'page404',
       component: page404
+    },
+    {
+      path: '/programmation',
+      name: 'programmation',
+      component: Programmation
     },
     {
       path: '/about',
