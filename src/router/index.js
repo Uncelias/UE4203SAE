@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Contact from '../views/Contact.vue'
 import page404 from '../views/page404.vue'
 import Programmation from '../views/Programmation.vue'
+import mentionslegales from '../views/mentionslegales.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/programmation',
       name: 'programmation',
       component: Programmation
+    },
+    {
+      path: '/mentionslegales',
+      name: 'mentionslegales',
+      component: mentionslegales
     },
     {
       path: '/about',
