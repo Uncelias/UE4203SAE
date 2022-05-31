@@ -2,7 +2,7 @@
   <p class="flex text-white font-space-age text-2xl -mt-14 ml-8">
     Join The Move
   </p>
-  <img class="absolute ml-80" src="../assets/Degrad bulle.png" />
+  <img class="absolute ml-80" src="../assets/DegradBulle.png" />
   <p class="flex text-white font-inter ml-8 mr-8">
     Take part to the first edition of UTOPIA the new electro fest coming to
     london this summer !
@@ -13,7 +13,7 @@
   >
     Be Ready
   </p>
-  <img class="absolute -ml-5" src="../assets/Degrad bulle.png" />
+  <img class="absolute -ml-5" src="../assets/DegradBulle.png" />
 
   <p class="flex flex-row-reverse font-inter text-white ml-8 mr-8">
     From the 20th of august to the 22th come
