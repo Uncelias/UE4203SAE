@@ -30,6 +30,9 @@
     Bourezg. To contact us By phone : +33381994734 By email :
     bourezg.eden@gmail.com By mail : 4 Place Tharradin, 25200 Montbéliard
   </p>
+  <card />
+  <card2 />
+  <card3 />
 </template>
 <script >
 import card from "../components/card.vue";

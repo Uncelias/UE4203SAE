@@ -220,6 +220,10 @@
       src="../assets/martin.png"
     />
   </section>
+
+  <card />
+  <card2 />
+  <card3 />
 </template>
 <script >
 import card from "../components/card.vue";
