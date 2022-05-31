@@ -14,7 +14,13 @@
     >
       <div class="block text-center">
         <p
-          class="not-italic mb-1 text-5xl font-inter font-bold text-indigo-500"
+          class="
+            not-italic
+            mb-1
+            text-5xl
+            font-space-age font-bold
+            text-indigo-500
+          "
         >
           1 DAY
         </p>
