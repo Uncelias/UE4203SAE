@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h5>Liste des artistes - Simple liste</h5>
+  <div class="text-white">
+    <h5 class="text-white">Liste des artistes - Simple liste</h5>
   </div>
   <table class="table">
     <thead class="thead-dark">
@@ -23,7 +23,7 @@
 
 <script type="module">
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -37,7 +37,7 @@ import {
   updateDoc,
   deleteDoc,
   onSnapshot,
-} from "https://www.gstatic.com/firebasejs/9.8.2/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCchoSKFCAZzMy-usgnn2qwALdy_xfbEQU",
@@ -57,6 +57,23 @@ export default {
       message: null,
       listeArtistes: [],
     };
+  },
+  mounted() {
+    this.getArtistes();
+  },
+  methods: {
+    async getArtistes() {
+      const firestore = getFirestore();
+      const dbArtistes = collection(firestore, "Artistes");
+      const query = await getDocs(dbArtistes);
+      query.forEach((doc) => {
+        let Artistes = {
+          id: doc.id,
+          nom: doc.data().nom,
+        };
+        this.listeArtistes.push(artistes);
+      });
+    },
   },
 };
 </script>
