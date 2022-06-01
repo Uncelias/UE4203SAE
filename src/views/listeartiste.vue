@@ -22,12 +22,6 @@
 </template>
 
 <script type="module">
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 import {
   getFirestore,
   collection,
@@ -38,18 +32,6 @@ import {
   deleteDoc,
   onSnapshot,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCchoSKFCAZzMy-usgnn2qwALdy_xfbEQU",
-  authDomain: "sae203-a216f.firebaseapp.com",
-  projectId: "sae203-a216f",
-  storageBucket: "sae203-a216f.appspot.com",
-  messagingSenderId: "4079422250",
-  appId: "1:4079422250:web:8f0e17ec9108390721ec53",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
 
 export default {
   data() {
