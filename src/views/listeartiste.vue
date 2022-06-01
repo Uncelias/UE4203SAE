@@ -1,41 +1,24 @@
 <template>
-  <div class="text-white">
-    <h5 class="text-white">Liste des artistes - Simple liste</h5>
+  <h1 class="text-white font-space-age text-center mt-8 mb-8 text-xl ml-5 mr-5">
+    Liste d'artistes présent au festival
+  </h1>
+  <div v-for="artiste in listeArtistes" :key="artiste.id">
+    <p class="text-white">{{ artiste.nom }}</p>
   </div>
-  <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Nom</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="artistes in listeArtistes" :key="artistes.id">
-        <td>{{ artistes.id }}</td>
-        <td>{{ artistes.nom }}</td>
-        <td>-</td>
-      </tr>
-    </tbody>
-  </table>
   <hr />
 </template>
 
-<script type="module">
+<script>
 import {
   getFirestore,
   collection,
-  doc,
   getDocs,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-  onSnapshot,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
 
 export default {
   data() {
     return {
+      nom: null,
       message: null,
       listeArtistes: [],
     };
@@ -46,10 +29,10 @@ export default {
   methods: {
     async getArtistes() {
       const firestore = getFirestore();
-      const dbArtistes = collection(firestore, "Artistes");
+      const dbArtistes = collection(firestore, "artistes");
       const query = await getDocs(dbArtistes);
       query.forEach((doc) => {
-        let Artistes = {
+        let artistes = {
           id: doc.id,
           nom: doc.data().nom,
         };
