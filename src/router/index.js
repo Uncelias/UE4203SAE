@@ -9,6 +9,10 @@ import artistes from '../views/artistes.vue'
 import styleguide from '../views/styleguide.vue'
 import listeartiste from '../views/listeartiste.vue'
 import listeartistesynchro from '../views/listeartistesynchro.vue'
+import listeartistedit from '../views/listeartistedit.vue'
+import listeartistesupr from '../views/listeartistesupr.vue'
+import listeartisteadd from '../views/listeartisteadd.vue'
+
 
 
 const router = createRouter({
@@ -63,6 +67,21 @@ const router = createRouter({
       path: '/listeartistesynchro',
       name: 'listeartistesynchro',
       component: listeartistesynchro
+    },
+    {
+      path: '/listeartistedit',
+      name: 'listeartistedit',
+      component: listeartistedit
+    },
+    {
+      path: '/listeartistesupr',
+      name: 'listeartistesupr',
+      component: listeartistesupr
+    },
+    {
+      path: '/listeartisteadd',
+      name: 'listeartisteadd',
+      component: listeartisteadd
     },
     {
       path: '/about',
