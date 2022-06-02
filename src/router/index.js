@@ -8,7 +8,7 @@ import thefestival from '../views/thefestival.vue'
 import artistes from '../views/artistes.vue'
 import styleguide from '../views/styleguide.vue'
 import listeartiste from '../views/listeartiste.vue'
-import listeartiste from '../views/listeartistesynchro.vue'
+import listeartistesynchro from '../views/listeartistesynchro.vue'
 
 
 const router = createRouter({
