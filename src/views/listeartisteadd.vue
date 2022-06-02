@@ -1,6 +1,6 @@
 <template>
   <h1 class="text-white font-space-age text-center mt-8 mb-8 text-xl ml-5 mr-5">
-    Liste d'artistes présent au festival
+    Ajouter des artistes au festival
   </h1>
   <form @submit.prevent="createArtistesynchro">
     <img :src="imageData" />
