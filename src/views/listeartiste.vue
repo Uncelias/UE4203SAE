@@ -3,7 +3,7 @@
     Liste d'artistes présent au festival
   </h1>
   <div v-for="artiste in listeArtistes" :key="artiste.id">
-    <p class="text-white">{{ artiste.nom }}</p>
+    <p class="text-white font-space-age ml-5 mb-5">{{ artiste.nom }}</p>
   </div>
   <hr />
 </template>

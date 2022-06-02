@@ -8,6 +8,8 @@ import thefestival from '../views/thefestival.vue'
 import artistes from '../views/artistes.vue'
 import styleguide from '../views/styleguide.vue'
 import listeartiste from '../views/listeartiste.vue'
+import listeartiste from '../views/listeartistesynchro.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,6 +58,11 @@ const router = createRouter({
       path: '/styleguide',
       name: 'styleguide',
       component: styleguide
+    },
+    {
+      path: '/listeartistesynchro',
+      name: 'listeartistesynchro',
+      component: listeartistesynchro
     },
     {
       path: '/about',
