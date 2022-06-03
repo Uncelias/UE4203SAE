@@ -59,8 +59,8 @@ const router = createRouter({
       component: artistes
     },
     {
-      path: '/styleguide',
-      name: 'styleguide',
+      path: '/style-guide',
+      name: 'style-guide',
       component: styleguide
     },
     {
@@ -69,12 +69,12 @@ const router = createRouter({
       component: listeartistesynchro
     },
     {
-      path: '/listeartistedit',
+      path: '/listeartistedit/:id',
       name: 'listeartistedit',
       component: listeartistedit
     },
     {
-      path: '/listeartistesupr',
+      path: '/listeartistesupr/:id',
       name: 'listeartistesupr',
       component: listeartistesupr
     },

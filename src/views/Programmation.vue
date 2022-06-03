@@ -3,7 +3,7 @@
     <h1 class="text-white font-space-age text-center mt-8 mb-8 text-4xl">
       PROGRAMMATION
     </h1>
-    <img class="absolute ml-96" src="../assets/DegradBulle.png" />
+    <img class="absolute ml-80" src="../assets/DegradBulle.png" />
     <h2 class="text-white font-space-age text-center mt-8 text-2xl">20TH</h2>
     <h2 class="text-white font-space-age text-xl -mt-2 text-center mb-6">
       1PM - 0AM

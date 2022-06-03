@@ -13,6 +13,22 @@
         class="w-50 h-50 mb-5 block ml-auto mr-auto"
         :src="artistesynchro.image"
       />
+      <RouterLink
+        :to="{
+          name: 'listeartistesupr',
+          params: { id: artistesynchro.id },
+        }"
+        ><p class="block text-center font-space-age text-white">supprimer</p>
+      </RouterLink>
+      <RouterLink
+        :to="{
+          name: 'listeartistedit',
+          params: { id: artistesynchro.id },
+        }"
+        ><p class="block text-center font-space-age mb-10 text-white">
+          modifier
+        </p></RouterLink
+      >
     </div>
     <hr />
   </main>

@@ -18,7 +18,7 @@ import {
   onSnapshot,
   query,
   orderBy,
-} from "firebase/firestore";
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
 
 import {
   getStorage,
@@ -26,7 +26,7 @@ import {
   getDownloadURL,
   uploadString,
   deleteObject,
-} from "firebase/storage";
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
 
 export default {
   name: "UpdateArtistesView",

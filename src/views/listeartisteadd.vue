@@ -90,7 +90,7 @@ export default {
           );
         }
       );
-      this.$router.push("/artistesynchro");
+      this.$router.push("/listeartistesynchro");
     },
   },
 };
