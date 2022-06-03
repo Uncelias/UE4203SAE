@@ -59,7 +59,6 @@ import {
   collection,
   onSnapshot,
 } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
-
 import {
   getStorage,
   ref,
