@@ -1,11 +1,18 @@
 <template>
-  <h1 class="text-white font-space-age text-center mt-8 mb-8 text-xl ml-5 mr-5">
-    Liste d'artistes présent au festival
-  </h1>
-  <div v-for="artistesynchro in listeArtistesynchro" :key="artistesynchro.id">
-    <p class="text-white font-space-age ml-5 mb-5">{{ artistesynchro.nom }}</p>
+  <div @submit.prevent="updateArtistesynchro">
+    <h1
+      class="text-white font-space-age text-center mt-8 mb-8 text-xl ml-5 mr-5"
+    >
+      Modification d'artistes présent au festival
+    </h1>
+    <input type="text" v-model="artistesynchro.nom" />
+    <img :src="imageData" />
+    <button class="mr-5 text-white" type="submit">Modifier</button>
+    <button class="text-white mb-20">
+      <router-link to="/listeartistesynchro">Cancel</router-link>
+    </button>
+    <hr />
   </div>
-  <hr />
 </template>
 
 <script>
@@ -39,17 +46,17 @@ export default {
         image: null,
       },
       refArtistesynchro: null,
-      imgModifiee: false,
+      imgModifiee: true,
       photoActuelle: null,
     };
   },
   mounted() {
     console.log("id artistesynchro", this.$route.params.id);
     this.getArtistesynchro(this.$route.params.id);
-    this.getArtistesynchro();
   },
 
   methods: {
+    /*
     async getArtistesynchro() {
       const firestore = getFirestore();
       const dbArtistesynchro = collection(firestore, "artistesynchro");
@@ -60,14 +67,15 @@ export default {
           ...doc.data(),
         }));
       });
-    },
+    }, */
 
     async getArtistesynchro(id) {
       const firestore = getFirestore();
-      const docRef = doc(firestore, "Artistesynchro", id);
+      const docRef = doc(firestore, "artistesynchro", id);
       this.refArtistesynchro = await getDoc(docRef);
       if (this.refArtistesynchro.exists()) {
         this.artistesynchro = this.refArtistesynchro.data();
+        console.log("Artiste actuel", this.artistesynchro);
         this.photoActuelle = this.artistesynchro.image;
       } else {
         this.console.log("Artiste inexistant");
