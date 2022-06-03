@@ -10,8 +10,10 @@
       required
     />
     <input type="file" ref="file" id="file" @change="previewImage" />
-    <button class="text-white" type="submit">Créer</button>
-    <button><router-link to="/listeartistesynchro">Cancel</router-link></button>
+    <button class="mr-5 text-white" type="submit">Créer</button>
+    <button class="text-white mb-20">
+      <router-link to="/listeartistesynchro">Cancel</router-link>
+    </button>
   </form>
   <hr />
 </template>

@@ -2,8 +2,8 @@
   <h1 class="text-white font-space-age text-center mt-8 mb-8 text-xl ml-5 mr-5">
     Liste d'artistes présent au festival
   </h1>
-  <div v-for="artiste in listeArtistes" :key="artiste.id">
-    <p class="text-white font-space-age ml-5 mb-5">{{ artiste.nom }}</p>
+  <div v-for="artistesynchro in listeArtistesynchro" :key="artistesynchro.id">
+    <p class="text-white font-space-age ml-5 mb-5">{{ artistesynchro.nom }}</p>
   </div>
   <hr />
 </template>
@@ -33,49 +33,49 @@ export default {
   data() {
     return {
       imageData: null,
-      listeArtistes: [],
-      Artistes: {
-        Nom: null,
-        imgPresentation: null,
+      listeArtistesynchro: [],
+      artistesynchro: {
+        nom: null,
+        image: null,
       },
-      refArtistes: null,
+      refArtistesynchro: null,
       imgModifiee: false,
       photoActuelle: null,
     };
   },
   mounted() {
-    console.log("id artistes", this.$route.params.id);
-    this.getArtistes(this.$route.params.id);
-    this.getArtistes();
+    console.log("id artistesynchro", this.$route.params.id);
+    this.getArtistesynchro(this.$route.params.id);
+    this.getArtistesynchro();
   },
 
   methods: {
-    async getArtistes() {
+    async getArtistesynchro() {
       const firestore = getFirestore();
-      const dbArtistes = collection(firestore, "Artistes");
-      const q = query(dbArtistes, orderBy("nom", "asc"));
+      const dbArtistesynchro = collection(firestore, "artistesynchro");
+      const q = query(dbArtistesynchro, orderBy("nom", "asc"));
       await onSnapshot(q, (snapshot) => {
-        this.listeArtistes = snapshot.docs.map((doc) => ({
+        this.listeArtistesynchro = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
       });
     },
 
-    async getArtistes(id) {
+    async getArtistesynchro(id) {
       const firestore = getFirestore();
-      const docRef = doc(firestore, "Artistes", id);
-      this.refArtistes = await getDoc(docRef);
-      if (this.refArtistes.exists()) {
-        this.Artistes = this.refArtistes.data();
-        this.photoActuelle = this.Artistes.imgPresentation;
+      const docRef = doc(firestore, "Artistesynchro", id);
+      this.refArtistesynchro = await getDoc(docRef);
+      if (this.refArtistesynchro.exists()) {
+        this.artistesynchro = this.refArtistesynchro.data();
+        this.photoActuelle = this.artistesynchro.image;
       } else {
         this.console.log("Artiste inexistant");
       }
       const storage = getStorage();
       const spaceRef = ref(
         storage,
-        "Artistes/" + this.Artistes.imgPresentation
+        "artistesynchro/" + this.artistesynchro.image
       );
       getDownloadURL(spaceRef)
         .then((url) => {
@@ -88,7 +88,7 @@ export default {
 
     previewImage: function (event) {
       this.file = this.$refs.file.files[0];
-      this.Artistes.imgPresentation = this.file.name;
+      this.artistesynchro.image = this.file.name;
       this.imgModifiee = true;
       var input = event.target;
       if (input.files && input.files[0]) {
@@ -99,27 +99,24 @@ export default {
         reader.readAsDataURL(input.files[0]);
       }
     },
-    async updateArtistes() {
+    async updateArtistesynchro() {
       if (this.imgModifiee) {
         const storage = getStorage();
-        let docRef = ref(storage, "Artistes/" + this.photoActuelle);
+        let docRef = ref(storage, "artistesynchro/" + this.photoActuelle);
         deleteObject(docRef);
-        docRef = ref(storage, "Artistes/" + this.Artistes.imgPresentation);
+        docRef = ref(storage, "artistesynchro/" + this.artistesynchro.image);
         await uploadString(docRef, this.imageData, "data_url").then(
           (snapshot) => {
-            console.log(
-              "Uploaded a base64 string",
-              this.Artistes.imgPresentation
-            );
+            console.log("Uploaded a base64 string", this.artistesynchro.image);
           }
         );
       }
       const firestore = getFirestore();
       await updateDoc(
-        doc(firestore, "Artistes", this.$route.params.id),
-        this.Artistes
+        doc(firestore, "artistesynchro", this.$route.params.id),
+        this.artistesynchro
       );
-      this.$router.push("/artistes");
+      this.$router.push("/artistesynchro");
     },
   },
 };

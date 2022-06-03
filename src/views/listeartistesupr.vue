@@ -1,20 +1,49 @@
 <template>
-  <h1 class="text-white font-space-age text-center mt-8 mb-8 text-xl ml-5 mr-5">
-    Liste d'artistes présent au festival
-  </h1>
-  <form @submit.prevent="deleteArtistesynchro">
-    <img :src="imageData" />
-    <input
-      class="my-4"
-      placeholder="Nom de l'artiste"
-      v-model="Artistesynchro.nom"
-      disabled
-    />
-    <input type="file" ref="file" id="file" @change="previewImage" />
-    <button class="text-white" type="submit">modifier</button>
-    <button><router-link to="/listeartistesynchro">Cancel</router-link></button>
-  </form>
-  <hr />
+  <main>
+    <div class="flex justify-center my-20">
+      <h2 class="text-Custom-red text-4xl">Suppression d'un artiste</h2>
+    </div>
+    <form @submit.prevent="deleteArtistesynchro">
+      <div class="grid grid-cols-2">
+        <div class="mx-16">
+          <img :src="photoActuelle" />
+        </div>
+        <div class="flex flex-col">
+          <input
+            class="my-4"
+            placeholder="Nom de l'artiste"
+            v-model="artistesynchro.nom"
+            disabled
+          />
+        </div>
+      </div>
+      <div class="flex justify-evenly my-10">
+        <button
+          class="
+            border border-Custom-red
+            p-2
+            rounded-lg
+            text-lg text-white
+            font-space-age
+          "
+          type="submit"
+        >
+          Supprimer
+        </button>
+        <button
+          class="
+            border border-Custom-red
+            p-2
+            rounded-lg
+            text-lg text-white
+            font-space-age
+          "
+        >
+          <RouterLink to="/listeartistesynchro">Annuler</RouterLink>
+        </button>
+      </div>
+    </form>
+  </main>
 </template>
 
 <script>
@@ -36,32 +65,34 @@ export default {
   name: "DeleteArtistesynchroView",
   data() {
     return {
-      Artistesynchro: {
-        Nom: null,
+      artistesynchro: {
+        nom: null,
         image: null,
       },
+      refArtistesynchro: null,
+      photoActuelle: null,
     };
   },
   mounted() {
-    console.log("id artisteo", this.$route.params.id);
+    console.log("id artiste", this.$route.params.id);
     this.getArtistesynchro(this.$route.params.id);
   },
 
   methods: {
     async getArtistesynchro(id) {
       const firestore = getFirestore();
-      const docRef = doc(firestore, "Artistesynchro", id);
+      const docRef = doc(firestore, "artistesynchro", id);
       this.refArtistesynchro = await getDoc(docRef);
       if (this.refArtistesynchro.exists()) {
-        this.Artistesynchro = this.refArtistesynchro.data();
-        this.photoActuelle = this.Artistesynchro.image;
+        this.artistesynchro = this.refArtistesynchro.data();
+        this.photoActuelle = this.artistesynchro.image;
       } else {
         this.console.log("Artiste inexistant");
       }
       const storage = getStorage();
       const spaceRef = ref(
         storage,
-        "artistesynchro/" + this.Artistesynchro.iages
+        "artistesynchro/" + this.artistesynchro.image
       );
       getDownloadURL(spaceRef)
         .then((url) => {
@@ -74,13 +105,13 @@ export default {
 
     async deleteArtistesynchro() {
       const firestore = getFirestore();
-      await deleteDoc(doc(firestore, "Artistesynchro", this.$route.params.id));
+      await deleteDoc(doc(firestore, "artistesynchro", this.$route.params.id));
 
       const storage = getStorage();
-      let docRef = ref(storage, "Artistesynchro/" + this.Artistesynchro.image);
+      let docRef = ref(storage, "artistesynchro/" + this.artistesynchro.image);
       deleteObject(docRef);
 
-      this.$router.push("/artistesynchro");
+      this.$router.push("/listeartistesynchro");
     },
   },
 };

@@ -5,6 +5,24 @@
     >
       Liste d'artistes présent au festival et images
     </h1>
+    <RouterLink
+      :to="{
+        name: 'listeartisteadd',
+      }"
+      ><p
+        class="
+          block
+          text-center
+          font-space-age
+          mb-10
+          rounded-sm
+          border-2
+          text-white
+        "
+      >
+        Ajouter un artiste
+      </p>
+    </RouterLink>
     <div v-for="artistesynchro in listeArtistesynchro" :key="artistesynchro.id">
       <p class="text-white font-space-age ml-5 mb-5">
         {{ artistesynchro.nom }}
